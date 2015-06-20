@@ -18,6 +18,7 @@ router.post('/', function(req, res, next) {
 //    if ((req.body.sender_id) == rohanSenderId) {
 //        bot.send();
 //    }
+    console.log(req);
     bot.send("test message, please ignore.");
     process.some_var = req.body;
     res.send(req.body);
