@@ -20,7 +20,7 @@ module.exports = {
                 console.log("error in finding word");
                 return false;
             }
-            if (doc.isNullOrUndefined()) {
+            if (!doc) {
                 doc = new Word();
                 newWord.value = word;
                 newWord.hits = 1;
