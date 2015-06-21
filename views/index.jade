@@ -3,11 +3,6 @@ extends layout
 block content
   h1= title
   ol
-      - if (typeof(words) !== 'undefined'){
-          each item in words
-              - if (item) {
-                  li #{item.hits} "  ---  " #{item.value}
-              -}
-      -} else {
-        li "No words yet in the list"
-      -}
+    each val in words.length ? words : []
+        - console.log(val)
+        li #{val.hits}     #{val.value}
