@@ -5,7 +5,7 @@ block content
   ol
       - if (typeof(words) !== 'undefined'){
           each item in words
-              - if (typeof(item) !== 'undefined'){
+              - if (item) {
                   li #{item.hits} "  ---  " #{item.value}
               -}
       -} else {
