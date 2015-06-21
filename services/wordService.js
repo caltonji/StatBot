@@ -11,14 +11,14 @@ module.exports = {
      params: User user, the User associated with this Node
      function callback(string privateKey)
      */
-    incrementWordCount: function (word) {
+    incrementWordCount: function (word, callback) {
 
         var query = {'value': word};
 
         Word.findOne(query, function(err, doc){
             if (err) {
                 console.log("error in finding word");
-                return false;
+                callback(false);
             }
             console.log(doc);
             if (!doc) {
@@ -31,9 +31,9 @@ module.exports = {
             doc.save(function (err) {
                 if (err) {
                     console.log("error in saving word");
-                    return false;
+                    callback(false);
                 }
-                return true;
+                callback(true)
             });
         });
 
