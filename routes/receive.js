@@ -5,7 +5,9 @@ var express = require('express');
 var router = express.Router();
 
 var bot = require('../public/javascripts/bot.js');
+var process = require('../public/javascripts/processingMessages.js');
 var bodyParser = require('body-parser');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -15,12 +17,10 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/', function(req, res, next) {
-//    if ((req.body.sender_id) == rohanSenderId) {
-//        bot.send();
-//    }
-    console.log(req);
-    bot.send("test message, please ignore.");
-    process.some_var = req.body;
+    if (req.body.sender_type != 'bot') {
+        console.log(req);
+        process.updateWordCounts(req.body.text);
+    }
     res.send(req.body);
 });
 

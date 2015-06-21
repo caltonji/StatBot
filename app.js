@@ -4,9 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var mongodb = require('mongodb');
-//var mongoose = require('mongoose');
-//mongoose.connect('mongodb://localhost:27017/StatBot');
+var mongodb = require('mongodb');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/StatBot');
+
+//Models
+var Word = require('./models/word');
+var Message = require('./models/message');
 
 
 //declaring routes
