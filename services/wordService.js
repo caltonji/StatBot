@@ -39,11 +39,11 @@ module.exports = {
 
     },
     getOrderedArray: function() {
-        var sortedWords = null;
-        Word.find({}).sort({hits: -1}, function(err, words) {
-            if (err) return null;
-            sortedWords = words;
-        });
-        return sortedWords;
+        var sortedWords = Word.find({}).sort({hits: -1});
+        if (sortedWords) {
+            return sortedWords;
+        } else {
+            return null;
+        }
     }
 };
