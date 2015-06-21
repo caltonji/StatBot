@@ -41,7 +41,7 @@ module.exports = {
     },
     getOrderedArray: function() {
         var sortedWords = []
-        Word.find({},{sort:{date_added: -1}}, function(err,allWords){
+        Word.find({},{sort:{hits: -1}}, function(err,allWords){
             if (err) return [];
             sortedWords = allWords;
         });
