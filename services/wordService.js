@@ -20,6 +20,7 @@ module.exports = {
                 console.log("error in finding word");
                 return false;
             }
+            console.log(doc);
             if (!doc) {
                 doc = new Word();
                 doc.value = word;
