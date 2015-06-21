@@ -40,16 +40,12 @@ module.exports = {
 
     },
     getOrderedArray: function() {
-        var sortedWords = []
-        Word.find({},{sort:{hits: -1}}, function(err,allWords){
+        Word.find({}, function(err, words){
             if (err) return [];
-            sortedWords = allWords;
+            words.sort(function(a, b) {return b.hits - a.hits});
+            console.log(words);
+            return words;
         });
-        if (sortedWords) {
-            console.log(sortedWords);
-            return sortedWords;
-        } else {
-            return [];
-        }
+        return [];
     }
 };
