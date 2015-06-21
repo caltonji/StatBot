@@ -3,5 +3,11 @@ extends layout
 block content
   h1= title
   ol
-      each item in words
-          li #{item.hits} "  ---  " #{item.value}
+      - if (typeof(words) !== 'undefined'){
+          each item in words
+              - if (typeof(item) !== 'undefined'){
+                  li #{item.hits} "  ---  " #{item.value}
+              -}
+      -} else {
+        li "No words yet in the list"
+      -}
