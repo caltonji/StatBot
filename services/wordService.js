@@ -43,7 +43,7 @@ module.exports = {
         if (sortedWords) {
             return sortedWords;
         } else {
-            return null;
+            return [];
         }
     }
 };
