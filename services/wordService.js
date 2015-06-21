@@ -22,8 +22,8 @@ module.exports = {
             }
             if (!doc) {
                 doc = new Word();
-                newWord.value = word;
-                newWord.hits = 1;
+                doc.value = word;
+                doc.hits = 1;
             } else {
                 doc.hits = doc.hits + 1;
             }
