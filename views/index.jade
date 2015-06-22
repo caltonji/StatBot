@@ -1,8 +1,11 @@
 extends layout
-
 block content
   h1= title
+
+  p
+    | rank &nbsp;hits &nbsp;&nbsp;word
   ol
     each val in words.length ? words : []
         - console.log(val);
-        li #{val["hits"]}     #{val["value"]}
+        li
+            |<strong> &nbsp;#{val.hits} &nbsp;&nbsp;&nbsp;&nbsp;#{val.value} </strong>

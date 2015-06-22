@@ -4,7 +4,9 @@ var wordService = require("../services/wordService.js");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'StatBot',  words: JSON.stringify(wordService.getOrderedArray())});
+  wordService.getOrderedArray(function(words) {
+      res.render('index', { title: 'StatBot',  words: words});
+  });
 });
 
 

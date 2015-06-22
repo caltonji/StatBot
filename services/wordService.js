@@ -39,13 +39,12 @@ module.exports = {
 
 
     },
-    getOrderedArray: function() {
+    getOrderedArray: function(callback) {
         Word.find({}, function(err, words){
             if (err) return [];
             words.sort(function(a, b) {return b.hits - a.hits});
-            console.log(words);
-            return words;
+//            console.log(words);
+            callback(words);
         });
-        return [];
     }
 };
