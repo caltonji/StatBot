@@ -11,6 +11,7 @@ mongoose.connect('mongodb://localhost:27017/StatBot');
 //Models
 var Word = require('./models/word');
 var Message = require('./models/message');
+var User = require('./models/user')
 
 
 //declaring routes

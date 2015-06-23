@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
     if (req.body.sender_type != 'bot') {
         console.log(req);
-        process.updateWordCounts(req.body.text);
+        process.updateWordCounts(req.body.text, req.body.user_id, req.body.name);
     }
     res.send(req.body);
 });
