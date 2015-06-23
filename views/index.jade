@@ -5,7 +5,7 @@ block content
   p
     | rank &nbsp;hits &nbsp;&nbsp;word
   ol
-    each val in words.length ? words : []
+    each val in data.length ? data : []
         - console.log(val);
         li
-            |<strong> &nbsp;#{val.hits} &nbsp;&nbsp;&nbsp;&nbsp;#{val.value} </strong>
+            |<strong> &nbsp;#{val} &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; </strong>

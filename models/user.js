@@ -16,11 +16,14 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var Word = mongoose.model('Word', schema);
+var Message = mongoose.model('Message', schema);
 
 var UserSchema = new Schema({
     user_id: String,
     name: String,
-    words: [Word]
+    words: [Word],
+    messages: [Message]
 })
 
 module.exports = mongoose.model('User', UserSchema);
